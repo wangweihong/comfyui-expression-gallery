@@ -26,7 +26,7 @@ test('bilingual gallery, filters, paging, viewer, mobile layout, and node select
     if (route === '/scripts/api.js') return send('text/javascript', 'export const api={apiURL:path=>path};');
     if (route === '/scripts/app.js') return send('text/javascript', `
       class TestNode {
-        constructor(){this.widgets=[{name:'expression_id',value:'F01AF'},{name:'language',value:'zh'}];this.outputs=Array.from({length:7},()=>({}));this.title='Expression Gallery 表情图库';}
+        constructor(){this.widgets=[{name:'expression_id',value:'F01AF'},{name:'language',value:'zh'}];this.outputs=['image','expression_en','expression_zh'].map(name=>({name}));this.title='Expression Gallery 表情图库';}
         addDOMWidget(name,type,element,options){if(options.serialize!==false)throw Error('Unexpected serialization');document.body.append(element);element.dataset.widget=name;return {name,type};}
         setSize(){} setDirtyCanvas(){}
       }
@@ -104,7 +104,7 @@ test('bilingual gallery, filters, paging, viewer, mobile layout, and node select
     assert.equal(await page.locator('iframe').count(), 0);
     await page.locator('[data-widget="expression_browser"] button').last().click();
     assert.equal(await page.evaluate(() => window.testNode.widgets[1].value), 'en');
-    assert.equal(await page.evaluate(() => window.testNode.outputs[4].label), 'Expression (EN)');
+    assert.equal(await page.evaluate(() => window.testNode.outputs[1].label), 'Expression (EN)');
     assert.deepEqual(errors, []);
   } finally {
     await browser?.close();

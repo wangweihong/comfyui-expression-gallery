@@ -1,9 +1,11 @@
 import {app} from '../../scripts/app.js';
 import {api} from '../../scripts/api.js';
-import {strings,persist} from './i18n.mjs?v=0.3.1';
+import {migrateExpressionOutputs} from './output_migration.mjs?v=0.4.0';
+import {strings,persist} from './i18n.mjs?v=0.4.0';
 
 app.registerExtension({
  name:'comfyui-expression-gallery.browser',
+ beforeConfigureGraph(graphData){migrateExpressionOutputs(graphData);},
  async beforeRegisterNodeDef(nodeType,nodeData){
   if(nodeData.name!=='ExpressionClayGallery')return;
   const created=nodeType.prototype.onNodeCreated;
@@ -42,14 +44,14 @@ app.registerExtension({
    const openGallery=()=>{
     if(dialog)return;dialog=document.createElement('dialog');dialog.style.cssText='width:96vw;height:94vh;max-width:1800px;max-height:96vh;padding:0;border:1px solid #c6c9bb;border-radius:12px;background:#f7f5f0;';
     const header=document.createElement('div');header.style.cssText='height:46px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 18px;background:#e9ecdf;color:#30382e;font:13px sans-serif;';heading=document.createElement('strong');done=document.createElement('button');done.style.cssText='padding:5px 13px;border:1px solid #bdc5ae;background:#fff;color:#30382e;border-radius:5px;cursor:pointer;';done.onclick=close;header.append(heading,done);
-    frame=document.createElement('iframe');frame.src=api.apiURL('/expression_gallery/gallery')+'?v=0.3.1&lang='+language;frame.style.cssText='width:100%;height:calc(100% - 46px);border:0;';dialog.append(header,frame);window.addEventListener('message',receive);dialog.addEventListener('cancel',event=>{event.preventDefault();close();});document.body.append(dialog);setLanguage(language,false);dialog.showModal();
+    frame=document.createElement('iframe');frame.src=api.apiURL('/expression_gallery/gallery')+'?v=0.4.0&lang='+language;frame.style.cssText='width:100%;height:calc(100% - 46px);border:0;';dialog.append(header,frame);window.addEventListener('message',receive);dialog.addEventListener('cancel',event=>{event.preventDefault();close();});document.body.append(dialog);setLanguage(language,false);dialog.showModal();
    };
    browse.onclick=openGallery;preview.onclick=openGallery;preview.onkeydown=event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery();}};
    node.addDOMWidget('expression_browser','expression_gallery_control',toolbar,{serialize:false,hideOnZoom:false,getMinHeight:()=>42,getMaxHeight:()=>42});
    node.addDOMWidget('expression_preview','expression_gallery_preview',preview,{serialize:false,hideOnZoom:false,getMinHeight:()=>280,getMaxHeight:()=>440});
-   const configured=node.onConfigure;node.onConfigure=function(){configured?.apply(this,arguments);for(const name of ['expression_types_en','facial_actions_en','intensity_en','tags_json'])if(!node.outputs?.some(output=>output.name===name))node.addOutput?.(name,'STRING');setLanguage(langWidget?.value,false);update();};
+   const configured=node.onConfigure;node.onConfigure=function(){configured?.apply(this,arguments);setLanguage(langWidget?.value,false);update();};
    const removed=node.onRemoved;node.onRemoved=function(){close();removed?.apply(this,arguments);};
-   node.setSize([420,490]);setLanguage(language,false);update();
+   node.setSize([420,440]);setLanguage(language,false);update();
   };
  }
 });

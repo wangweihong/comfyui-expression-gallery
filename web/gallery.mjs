@@ -1,6 +1,6 @@
-import {strings,preferred,persist} from './i18n.mjs?v=0.3.1';
-import {createTagTools} from './tag_manager.mjs?v=0.3.1';
-import {createAssetTools} from './asset_manager.mjs?v=0.3.1';
+import {strings,preferred,persist} from './i18n.mjs?v=0.4.0';
+import {createTagTools} from './tag_manager.mjs?v=0.4.0';
+import {createAssetTools} from './asset_manager.mjs?v=0.4.0';
 const $=id=>document.getElementById(id),PAGE=60;
 let language=preferred(),data={records:[],taxonomy:{categories:[],tags:[],revision:0},meta:{}},category='',shown=0,filtered=[],current=0,selected='',signature='',batch=false;
 const filterTags=new Set(),selectedImages=new Set();

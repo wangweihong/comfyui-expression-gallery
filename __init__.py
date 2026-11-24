@@ -19,9 +19,8 @@ class ExpressionClayGallery:
             'expression_id': ('STRING', {'default': 'F01AF', 'tooltip': '浏览表情图库选择白模 / Browse white-clay expressions'}),
             'language': (['zh', 'en'], {'default': 'zh'})}}
 
-    RETURN_TYPES = ('IMAGE', 'INT', 'INT', 'STRING', 'STRING', 'STRING', 'STRING', 'STRING', 'STRING', 'STRING', 'STRING')
-    RETURN_NAMES = ('image', 'width', 'height', 'expression_id', 'expression_en', 'expression_zh', 'description',
-                    'expression_types_en', 'facial_actions_en', 'intensity_en', 'tags_json')
+    RETURN_TYPES = ('IMAGE', 'STRING', 'STRING')
+    RETURN_NAMES = ('image', 'expression_en', 'expression_zh')
     FUNCTION = 'load_expression'
     CATEGORY = 'image/Expression Gallery'
     DESCRIPTION = '白模表情图库：大类、表情类型、面部动作与强度标签；支持双语筛选、单张与批量标注。Bilingual expression gallery with editable taxonomy and annotations.'
@@ -48,27 +47,10 @@ class ExpressionClayGallery:
             rgba = ImageOps.exif_transpose(source).convert('RGBA')
             im = Image.alpha_composite(Image.new('RGBA', rgba.size, 'white'), rgba).convert('RGB')
             image = torch.from_numpy(np.array(im, dtype=np.float32) / 255.).unsqueeze(0)
-            width, height = im.size
         info = row['annotation']
         en = row['name_en'] if row['origin'] == 'user' else ', '.join(tag['en'] for tag in info['types'])
         zh = row['name_zh'] if row['origin'] == 'user' else '、'.join(tag['zh'] for tag in info['types'])
-        kind_en = 'custom expression reference' if row['origin'] == 'user' else 'white clay head, frontal view'
-        kind_zh = '自定义表情参考' if row['origin'] == 'user' else '正面白模人脸'
-        description = (f'{en or "unlabeled"} facial expression, {kind_en}, reference {expression_id}'
-                       if language == 'en' else f'{zh or "未标注"}表情，{kind_zh}，参考编号 {expression_id}')
-        types = ', '.join(tag['en'] for tag in info['types'])
-        actions = ', '.join(tag['en'] for tag in info['actions'])
-        intensity = info['intensity']['en']
-        field = 'en' if language == 'en' else 'zh'
-        details = [tag[field] for tag in info['types'] + info['actions']]
-        if info['intensity']['id'] != 'intensity_unrated':
-            details.append(info['intensity'][field])
-        if details:
-            description += ('; Tags: ' if language == 'en' else '；标签：') + ', '.join(details)
-        tags_json = json.dumps({'expression_id': expression_id, 'origin': row['origin'],
-                                'name_zh': row['name_zh'], 'name_en': row['name_en'],
-                                'reviewed': row['reviewed'], **info}, ensure_ascii=False)
-        return image, width, height, expression_id, en, zh, description, types, actions, intensity, tags_json
+        return image, en, zh
 
 
 routes = PromptServer.instance.routes
@@ -216,7 +198,7 @@ async def image_asset(request):
 @routes.get('/expression_gallery/web/{filename}')
 async def static_asset(request):
     name = request.match_info['filename']
-    if name not in {'gallery.mjs', 'style.css', 'i18n.mjs', 'icon.svg', 'tag_manager.mjs', 'tag_styles.css', 'tags_i18n.mjs', 'asset_manager.mjs', 'asset_styles.css', 'assets_i18n.mjs'}:
+    if name not in {'gallery.mjs', 'style.css', 'i18n.mjs', 'icon.svg', 'tag_manager.mjs', 'tag_styles.css', 'tags_i18n.mjs', 'asset_manager.mjs', 'asset_styles.css', 'assets_i18n.mjs', 'output_migration.mjs'}:
         raise web.HTTPNotFound()
     return web.FileResponse(catalog.ROOT / 'web' / name, headers={'Cache-Control': 'no-cache'})
 
