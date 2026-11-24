@@ -1,0 +1,9 @@
+[project]
+name = "comfyui-expression-gallery"
+version = "0.3.1"
+description = "Bilingual white-clay expression reference gallery for ComfyUI"
+requires-python = ">=3.10"
+dependencies = ["Pillow", "numpy", "torch", "aiohttp"]
+
+[tool.comfy]
+DisplayName = "Expression Gallery 白模表情图库"

@@ -1,0 +1,1203 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "cat_basic",
+      "zh": "基础情绪",
+      "en": "Basic emotions",
+      "aliases": [],
+      "position": 0
+    },
+    {
+      "id": "cat_social",
+      "zh": "害羞与社交不自在",
+      "en": "Shyness & social discomfort",
+      "aliases": [],
+      "position": 1
+    },
+    {
+      "id": "cat_dejection",
+      "zh": "低落与受挫",
+      "en": "Dejection & setbacks",
+      "aliases": [],
+      "position": 2
+    },
+    {
+      "id": "cat_contempt",
+      "zh": "轻蔑与优越感",
+      "en": "Contempt & superiority",
+      "aliases": [],
+      "position": 3
+    },
+    {
+      "id": "cat_cognition",
+      "zh": "疑惑与思考",
+      "en": "Confusion & thought",
+      "aliases": [],
+      "position": 4
+    },
+    {
+      "id": "cat_anxiety",
+      "zh": "紧张与不安",
+      "en": "Tension & anxiety",
+      "aliases": [],
+      "position": 5
+    },
+    {
+      "id": "cat_irritation",
+      "zh": "烦躁与抗拒",
+      "en": "Irritation & resistance",
+      "aliases": [],
+      "position": 6
+    },
+    {
+      "id": "cat_positive",
+      "zh": "愉悦的细分",
+      "en": "Positive nuances",
+      "aliases": [],
+      "position": 7
+    },
+    {
+      "id": "cat_playful",
+      "zh": "调皮与暧昧互动",
+      "en": "Playfulness & flirtation",
+      "aliases": [],
+      "position": 8
+    },
+    {
+      "id": "cat_crying",
+      "zh": "哭泣与笑容形态",
+      "en": "Crying & smile forms",
+      "aliases": [],
+      "position": 9
+    },
+    {
+      "id": "cat_physical",
+      "zh": "身体感受与状态",
+      "en": "Physical sensations & states",
+      "aliases": [],
+      "position": 10
+    },
+    {
+      "id": "cat_adult",
+      "zh": "成人亲密情境",
+      "en": "Adult intimacy contexts",
+      "aliases": [],
+      "position": 11
+    },
+    {
+      "id": "cat_mixed",
+      "zh": "混合表情",
+      "en": "Mixed expressions",
+      "aliases": [],
+      "position": 12
+    }
+  ],
+  "tags": [
+    {
+      "id": "type_afraid",
+      "dimension": "type",
+      "category_id": "cat_basic",
+      "zh": "恐惧",
+      "en": "afraid",
+      "aliases": [],
+      "position": 0
+    },
+    {
+      "id": "type_angry",
+      "dimension": "type",
+      "category_id": "cat_basic",
+      "zh": "愤怒",
+      "en": "angry",
+      "aliases": [],
+      "position": 1
+    },
+    {
+      "id": "type_disgusted",
+      "dimension": "type",
+      "category_id": "cat_basic",
+      "zh": "厌恶",
+      "en": "disgusted",
+      "aliases": [],
+      "position": 2
+    },
+    {
+      "id": "type_happy",
+      "dimension": "type",
+      "category_id": "cat_basic",
+      "zh": "开心",
+      "en": "happy",
+      "aliases": [],
+      "position": 3
+    },
+    {
+      "id": "type_neutral",
+      "dimension": "type",
+      "category_id": "cat_basic",
+      "zh": "中性",
+      "en": "neutral",
+      "aliases": [],
+      "position": 4
+    },
+    {
+      "id": "type_sad",
+      "dimension": "type",
+      "category_id": "cat_basic",
+      "zh": "悲伤",
+      "en": "sad",
+      "aliases": [],
+      "position": 5
+    },
+    {
+      "id": "type_surprised",
+      "dimension": "type",
+      "category_id": "cat_basic",
+      "zh": "惊讶",
+      "en": "surprised",
+      "aliases": [],
+      "position": 6
+    },
+    {
+      "id": "type_shy",
+      "dimension": "type",
+      "category_id": "cat_social",
+      "zh": "害羞",
+      "en": "shy",
+      "aliases": [],
+      "position": 7
+    },
+    {
+      "id": "type_bashful",
+      "dimension": "type",
+      "category_id": "cat_social",
+      "zh": "羞怯",
+      "en": "bashful",
+      "aliases": [],
+      "position": 8
+    },
+    {
+      "id": "type_embarrassed",
+      "dimension": "type",
+      "category_id": "cat_social",
+      "zh": "尴尬",
+      "en": "embarrassed",
+      "aliases": [],
+      "position": 9
+    },
+    {
+      "id": "type_ashamed",
+      "dimension": "type",
+      "category_id": "cat_social",
+      "zh": "羞愧",
+      "en": "ashamed",
+      "aliases": [],
+      "position": 10
+    },
+    {
+      "id": "type_guilty",
+      "dimension": "type",
+      "category_id": "cat_social",
+      "zh": "内疚",
+      "en": "guilty",
+      "aliases": [],
+      "position": 11
+    },
+    {
+      "id": "type_dejected",
+      "dimension": "type",
+      "category_id": "cat_dejection",
+      "zh": "沮丧",
+      "en": "dejected",
+      "aliases": [
+        "frustrated",
+        "垂头丧气"
+      ],
+      "position": 12
+    },
+    {
+      "id": "type_disappointed",
+      "dimension": "type",
+      "category_id": "cat_dejection",
+      "zh": "失望",
+      "en": "disappointed",
+      "aliases": [],
+      "position": 13
+    },
+    {
+      "id": "type_discouraged",
+      "dimension": "type",
+      "category_id": "cat_dejection",
+      "zh": "泄气",
+      "en": "discouraged",
+      "aliases": [],
+      "position": 14
+    },
+    {
+      "id": "type_helpless",
+      "dimension": "type",
+      "category_id": "cat_dejection",
+      "zh": "无奈",
+      "en": "helpless",
+      "aliases": [],
+      "position": 15
+    },
+    {
+      "id": "type_aggrieved",
+      "dimension": "type",
+      "category_id": "cat_dejection",
+      "zh": "委屈",
+      "en": "aggrieved",
+      "aliases": [],
+      "position": 16
+    },
+    {
+      "id": "type_downcast",
+      "dimension": "type",
+      "category_id": "cat_dejection",
+      "zh": "失落",
+      "en": "downcast",
+      "aliases": [],
+      "position": 17
+    },
+    {
+      "id": "type_despairing",
+      "dimension": "type",
+      "category_id": "cat_dejection",
+      "zh": "绝望",
+      "en": "despairing",
+      "aliases": [],
+      "position": 18
+    },
+    {
+      "id": "type_contemptuous",
+      "dimension": "type",
+      "category_id": "cat_contempt",
+      "zh": "轻蔑",
+      "en": "contemptuous",
+      "aliases": [],
+      "position": 19
+    },
+    {
+      "id": "type_disdainful",
+      "dimension": "type",
+      "category_id": "cat_contempt",
+      "zh": "鄙视",
+      "en": "disdainful",
+      "aliases": [],
+      "position": 20
+    },
+    {
+      "id": "type_dismissive",
+      "dimension": "type",
+      "category_id": "cat_contempt",
+      "zh": "不屑",
+      "en": "dismissive",
+      "aliases": [],
+      "position": 21
+    },
+    {
+      "id": "type_arrogant",
+      "dimension": "type",
+      "category_id": "cat_contempt",
+      "zh": "傲慢",
+      "en": "arrogant",
+      "aliases": [],
+      "position": 22
+    },
+    {
+      "id": "type_smug",
+      "dimension": "type",
+      "category_id": "cat_contempt",
+      "zh": "得意",
+      "en": "smug",
+      "aliases": [],
+      "position": 23
+    },
+    {
+      "id": "type_sarcastic",
+      "dimension": "type",
+      "category_id": "cat_contempt",
+      "zh": "嘲讽",
+      "en": "sarcastic",
+      "aliases": [],
+      "position": 24
+    },
+    {
+      "id": "type_confused",
+      "dimension": "type",
+      "category_id": "cat_cognition",
+      "zh": "困惑",
+      "en": "confused",
+      "aliases": [],
+      "position": 25
+    },
+    {
+      "id": "type_skeptical",
+      "dimension": "type",
+      "category_id": "cat_cognition",
+      "zh": "怀疑",
+      "en": "skeptical",
+      "aliases": [],
+      "position": 26
+    },
+    {
+      "id": "type_questioning",
+      "dimension": "type",
+      "category_id": "cat_cognition",
+      "zh": "疑问",
+      "en": "questioning",
+      "aliases": [],
+      "position": 27
+    },
+    {
+      "id": "type_curious",
+      "dimension": "type",
+      "category_id": "cat_cognition",
+      "zh": "好奇",
+      "en": "curious",
+      "aliases": [],
+      "position": 28
+    },
+    {
+      "id": "type_thoughtful",
+      "dimension": "type",
+      "category_id": "cat_cognition",
+      "zh": "思考",
+      "en": "thoughtful",
+      "aliases": [],
+      "position": 29
+    },
+    {
+      "id": "type_focused",
+      "dimension": "type",
+      "category_id": "cat_cognition",
+      "zh": "专注",
+      "en": "focused",
+      "aliases": [],
+      "position": 30
+    },
+    {
+      "id": "type_realization",
+      "dimension": "type",
+      "category_id": "cat_cognition",
+      "zh": "恍然大悟",
+      "en": "realization",
+      "aliases": [],
+      "position": 31
+    },
+    {
+      "id": "type_nervous",
+      "dimension": "type",
+      "category_id": "cat_anxiety",
+      "zh": "紧张",
+      "en": "nervous",
+      "aliases": [],
+      "position": 32
+    },
+    {
+      "id": "type_anxious",
+      "dimension": "type",
+      "category_id": "cat_anxiety",
+      "zh": "焦虑",
+      "en": "anxious",
+      "aliases": [],
+      "position": 33
+    },
+    {
+      "id": "type_worried",
+      "dimension": "type",
+      "category_id": "cat_anxiety",
+      "zh": "担忧",
+      "en": "worried",
+      "aliases": [],
+      "position": 34
+    },
+    {
+      "id": "type_apprehensive",
+      "dimension": "type",
+      "category_id": "cat_anxiety",
+      "zh": "忐忑",
+      "en": "apprehensive",
+      "aliases": [],
+      "position": 35
+    },
+    {
+      "id": "type_vigilant",
+      "dimension": "type",
+      "category_id": "cat_anxiety",
+      "zh": "警惕",
+      "en": "vigilant",
+      "aliases": [],
+      "position": 36
+    },
+    {
+      "id": "type_panicked",
+      "dimension": "type",
+      "category_id": "cat_anxiety",
+      "zh": "惊慌",
+      "en": "panicked",
+      "aliases": [],
+      "position": 37
+    },
+    {
+      "id": "type_irritated",
+      "dimension": "type",
+      "category_id": "cat_irritation",
+      "zh": "烦躁",
+      "en": "irritated",
+      "aliases": [],
+      "position": 38
+    },
+    {
+      "id": "type_impatient",
+      "dimension": "type",
+      "category_id": "cat_irritation",
+      "zh": "不耐烦",
+      "en": "impatient",
+      "aliases": [],
+      "position": 39
+    },
+    {
+      "id": "type_annoyed",
+      "dimension": "type",
+      "category_id": "cat_irritation",
+      "zh": "恼火",
+      "en": "annoyed",
+      "aliases": [],
+      "position": 40
+    },
+    {
+      "id": "type_resentful",
+      "dimension": "type",
+      "category_id": "cat_irritation",
+      "zh": "怨恨",
+      "en": "resentful",
+      "aliases": [],
+      "position": 41
+    },
+    {
+      "id": "type_dissatisfied",
+      "dimension": "type",
+      "category_id": "cat_irritation",
+      "zh": "不满",
+      "en": "dissatisfied",
+      "aliases": [],
+      "position": 42
+    },
+    {
+      "id": "type_sulking",
+      "dimension": "type",
+      "category_id": "cat_irritation",
+      "zh": "赌气",
+      "en": "sulking",
+      "aliases": [],
+      "position": 43
+    },
+    {
+      "id": "type_amused",
+      "dimension": "type",
+      "category_id": "cat_positive",
+      "zh": "愉快",
+      "en": "amused",
+      "aliases": [],
+      "position": 44
+    },
+    {
+      "id": "type_delighted",
+      "dimension": "type",
+      "category_id": "cat_positive",
+      "zh": "欣喜",
+      "en": "delighted",
+      "aliases": [],
+      "position": 45
+    },
+    {
+      "id": "type_excited",
+      "dimension": "type",
+      "category_id": "cat_positive",
+      "zh": "兴奋",
+      "en": "excited",
+      "aliases": [],
+      "position": 46
+    },
+    {
+      "id": "type_content",
+      "dimension": "type",
+      "category_id": "cat_positive",
+      "zh": "满足",
+      "en": "content",
+      "aliases": [],
+      "position": 47
+    },
+    {
+      "id": "type_relieved",
+      "dimension": "type",
+      "category_id": "cat_positive",
+      "zh": "释然",
+      "en": "relieved",
+      "aliases": [],
+      "position": 48
+    },
+    {
+      "id": "type_proud",
+      "dimension": "type",
+      "category_id": "cat_positive",
+      "zh": "自豪",
+      "en": "proud",
+      "aliases": [],
+      "position": 49
+    },
+    {
+      "id": "type_grateful",
+      "dimension": "type",
+      "category_id": "cat_positive",
+      "zh": "感激",
+      "en": "grateful",
+      "aliases": [],
+      "position": 50
+    },
+    {
+      "id": "type_mischievous",
+      "dimension": "type",
+      "category_id": "cat_playful",
+      "zh": "调皮",
+      "en": "mischievous",
+      "aliases": [],
+      "position": 51
+    },
+    {
+      "id": "type_teasing",
+      "dimension": "type",
+      "category_id": "cat_playful",
+      "zh": "戏谑",
+      "en": "teasing",
+      "aliases": [],
+      "position": 52
+    },
+    {
+      "id": "type_sly_grin",
+      "dimension": "type",
+      "category_id": "cat_playful",
+      "zh": "坏笑",
+      "en": "sly grin",
+      "aliases": [
+        "奸笑",
+        "侧目坏笑"
+      ],
+      "position": 53
+    },
+    {
+      "id": "type_sly",
+      "dimension": "type",
+      "category_id": "cat_playful",
+      "zh": "狡黠",
+      "en": "sly",
+      "aliases": [],
+      "position": 54
+    },
+    {
+      "id": "type_coy",
+      "dimension": "type",
+      "category_id": "cat_playful",
+      "zh": "娇羞",
+      "en": "coy",
+      "aliases": [],
+      "position": 55
+    },
+    {
+      "id": "type_flirty",
+      "dimension": "type",
+      "category_id": "cat_playful",
+      "zh": "调情",
+      "en": "flirty",
+      "aliases": [],
+      "position": 56
+    },
+    {
+      "id": "type_leering",
+      "dimension": "type",
+      "category_id": "cat_playful",
+      "zh": "色眯眯",
+      "en": "leering",
+      "aliases": [
+        "猥琐",
+        "色迷迷",
+        "lewd look"
+      ],
+      "position": 57
+    },
+    {
+      "id": "type_teary",
+      "dimension": "type",
+      "category_id": "cat_crying",
+      "zh": "含泪",
+      "en": "teary",
+      "aliases": [],
+      "position": 58
+    },
+    {
+      "id": "type_sobbing",
+      "dimension": "type",
+      "category_id": "cat_crying",
+      "zh": "啜泣",
+      "en": "sobbing",
+      "aliases": [],
+      "position": 59
+    },
+    {
+      "id": "type_weeping",
+      "dimension": "type",
+      "category_id": "cat_crying",
+      "zh": "大哭",
+      "en": "weeping",
+      "aliases": [],
+      "position": 60
+    },
+    {
+      "id": "type_holding_back_tears",
+      "dimension": "type",
+      "category_id": "cat_crying",
+      "zh": "强忍眼泪",
+      "en": "holding back tears",
+      "aliases": [],
+      "position": 61
+    },
+    {
+      "id": "type_bitter_smile",
+      "dimension": "type",
+      "category_id": "cat_crying",
+      "zh": "苦笑",
+      "en": "bitter smile",
+      "aliases": [],
+      "position": 62
+    },
+    {
+      "id": "type_forced_smile",
+      "dimension": "type",
+      "category_id": "cat_crying",
+      "zh": "假笑",
+      "en": "forced smile",
+      "aliases": [],
+      "position": 63
+    },
+    {
+      "id": "type_suppressed_laughter",
+      "dimension": "type",
+      "category_id": "cat_crying",
+      "zh": "憋笑",
+      "en": "suppressed laughter",
+      "aliases": [],
+      "position": 64
+    },
+    {
+      "id": "type_smiling_through_tears",
+      "dimension": "type",
+      "category_id": "cat_crying",
+      "zh": "含泪微笑",
+      "en": "smiling through tears",
+      "aliases": [],
+      "position": 65
+    },
+    {
+      "id": "type_pain",
+      "dimension": "type",
+      "category_id": "cat_physical",
+      "zh": "疼痛",
+      "en": "pain",
+      "aliases": [],
+      "position": 66
+    },
+    {
+      "id": "type_discomfort",
+      "dimension": "type",
+      "category_id": "cat_physical",
+      "zh": "难受",
+      "en": "discomfort",
+      "aliases": [],
+      "position": 67
+    },
+    {
+      "id": "type_nauseated",
+      "dimension": "type",
+      "category_id": "cat_physical",
+      "zh": "恶心",
+      "en": "nauseated",
+      "aliases": [],
+      "position": 68
+    },
+    {
+      "id": "type_sleepy",
+      "dimension": "type",
+      "category_id": "cat_physical",
+      "zh": "困倦",
+      "en": "sleepy",
+      "aliases": [],
+      "position": 69
+    },
+    {
+      "id": "type_fatigued",
+      "dimension": "type",
+      "category_id": "cat_physical",
+      "zh": "疲惫",
+      "en": "fatigued",
+      "aliases": [],
+      "position": 70
+    },
+    {
+      "id": "type_yawning",
+      "dimension": "type",
+      "category_id": "cat_physical",
+      "zh": "打哈欠",
+      "en": "yawning",
+      "aliases": [],
+      "position": 71
+    },
+    {
+      "id": "type_relaxed",
+      "dimension": "type",
+      "category_id": "cat_physical",
+      "zh": "放松",
+      "en": "relaxed",
+      "aliases": [],
+      "position": 72
+    },
+    {
+      "id": "type_sexual_arousal",
+      "dimension": "type",
+      "category_id": "cat_adult",
+      "zh": "性唤起",
+      "en": "sexual arousal",
+      "aliases": [],
+      "position": 73
+    },
+    {
+      "id": "type_orgasm_like",
+      "dimension": "type",
+      "category_id": "cat_adult",
+      "zh": "高潮样表情",
+      "en": "orgasm like",
+      "aliases": [
+        "性高潮",
+        "高潮",
+        "sex高潮",
+        "orgasm",
+        "climax"
+      ],
+      "position": 74
+    },
+    {
+      "id": "type_intimate_contentment",
+      "dimension": "type",
+      "category_id": "cat_adult",
+      "zh": "亲密情境满足",
+      "en": "intimate contentment",
+      "aliases": [],
+      "position": 75
+    },
+    {
+      "id": "type_post_intimacy_relaxation",
+      "dimension": "type",
+      "category_id": "cat_adult",
+      "zh": "亲密情境放松",
+      "en": "post intimacy relaxation",
+      "aliases": [],
+      "position": 76
+    },
+    {
+      "id": "type_pleasant_surprise",
+      "dimension": "type",
+      "category_id": "cat_mixed",
+      "zh": "惊喜",
+      "en": "pleasant surprise",
+      "aliases": [],
+      "position": 77
+    },
+    {
+      "id": "type_shy_happiness",
+      "dimension": "type",
+      "category_id": "cat_mixed",
+      "zh": "又羞又喜",
+      "en": "shy happiness",
+      "aliases": [],
+      "position": 78
+    },
+    {
+      "id": "type_angry_amusement",
+      "dimension": "type",
+      "category_id": "cat_mixed",
+      "zh": "又气又笑",
+      "en": "angry amusement",
+      "aliases": [],
+      "position": 79
+    },
+    {
+      "id": "type_mixed_laughter_tears",
+      "dimension": "type",
+      "category_id": "cat_mixed",
+      "zh": "哭笑不得",
+      "en": "mixed laughter tears",
+      "aliases": [],
+      "position": 80
+    },
+    {
+      "id": "type_fear_disgust",
+      "dimension": "type",
+      "category_id": "cat_mixed",
+      "zh": "恐惧与厌恶混合",
+      "en": "fear disgust",
+      "aliases": [],
+      "position": 81
+    },
+    {
+      "id": "type_sad_relief",
+      "dimension": "type",
+      "category_id": "cat_mixed",
+      "zh": "悲伤与释然混合",
+      "en": "sad relief",
+      "aliases": [],
+      "position": 82
+    },
+    {
+      "id": "action_inner_brow_raise",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "眉头内侧抬起",
+      "en": "inner brow raise",
+      "aliases": [],
+      "position": 83
+    },
+    {
+      "id": "action_brows_raised",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "眉毛抬高",
+      "en": "brows raised",
+      "aliases": [],
+      "position": 84
+    },
+    {
+      "id": "action_brows_lowered",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "眉毛压低",
+      "en": "brows lowered",
+      "aliases": [],
+      "position": 85
+    },
+    {
+      "id": "action_brow_furrow",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "眉头聚拢",
+      "en": "brow furrow",
+      "aliases": [],
+      "position": 86
+    },
+    {
+      "id": "action_one_brow_raised",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "单侧挑眉",
+      "en": "one brow raised",
+      "aliases": [],
+      "position": 87
+    },
+    {
+      "id": "action_eyes_wide",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "睁大眼睛",
+      "en": "eyes wide",
+      "aliases": [],
+      "position": 88
+    },
+    {
+      "id": "action_squint",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "眯眼",
+      "en": "squint",
+      "aliases": [],
+      "position": 89
+    },
+    {
+      "id": "action_eyes_closed",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "闭眼",
+      "en": "eyes closed",
+      "aliases": [],
+      "position": 90
+    },
+    {
+      "id": "action_eyes_half_closed",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "半闭眼",
+      "en": "eyes half closed",
+      "aliases": [],
+      "position": 91
+    },
+    {
+      "id": "action_wink",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "单眼眨眼",
+      "en": "wink",
+      "aliases": [],
+      "position": 92
+    },
+    {
+      "id": "action_lowered_gaze",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "视线下移",
+      "en": "lowered gaze",
+      "aliases": [],
+      "position": 93
+    },
+    {
+      "id": "action_sideways_gaze",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "侧目",
+      "en": "sideways gaze",
+      "aliases": [],
+      "position": 94
+    },
+    {
+      "id": "action_upward_gaze",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "视线上移",
+      "en": "upward gaze",
+      "aliases": [],
+      "position": 95
+    },
+    {
+      "id": "action_direct_gaze",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "直视",
+      "en": "direct gaze",
+      "aliases": [],
+      "position": 96
+    },
+    {
+      "id": "action_cheeks_raised",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "面颊上提",
+      "en": "cheeks raised",
+      "aliases": [],
+      "position": 97
+    },
+    {
+      "id": "action_nose_wrinkled",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "皱鼻",
+      "en": "nose wrinkled",
+      "aliases": [],
+      "position": 98
+    },
+    {
+      "id": "action_upper_lip_raised",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "上唇提起",
+      "en": "upper lip raised",
+      "aliases": [],
+      "position": 99
+    },
+    {
+      "id": "action_lip_corners_up",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "嘴角上扬",
+      "en": "lip corners up",
+      "aliases": [],
+      "position": 100
+    },
+    {
+      "id": "action_lip_corners_down",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "嘴角下垂",
+      "en": "lip corners down",
+      "aliases": [],
+      "position": 101
+    },
+    {
+      "id": "action_one_sided_smile",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "单侧嘴角上扬",
+      "en": "one sided smile",
+      "aliases": [],
+      "position": 102
+    },
+    {
+      "id": "action_lips_pressed",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "抿嘴",
+      "en": "lips pressed",
+      "aliases": [],
+      "position": 103
+    },
+    {
+      "id": "action_lips_pursed",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "噘嘴",
+      "en": "lips pursed",
+      "aliases": [],
+      "position": 104
+    },
+    {
+      "id": "action_lips_parted",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "嘴唇微张",
+      "en": "lips parted",
+      "aliases": [],
+      "position": 105
+    },
+    {
+      "id": "action_mouth_open",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "张嘴",
+      "en": "mouth open",
+      "aliases": [],
+      "position": 106
+    },
+    {
+      "id": "action_round_mouth",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "圆形嘴",
+      "en": "round mouth",
+      "aliases": [],
+      "position": 107
+    },
+    {
+      "id": "action_teeth_visible",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "露齿",
+      "en": "teeth visible",
+      "aliases": [],
+      "position": 108
+    },
+    {
+      "id": "action_jaw_dropped",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "下颌下落",
+      "en": "jaw dropped",
+      "aliases": [],
+      "position": 109
+    },
+    {
+      "id": "action_jaw_tense",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "下颌绷紧",
+      "en": "jaw tense",
+      "aliases": [],
+      "position": 110
+    },
+    {
+      "id": "action_lower_lip_tense",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "下唇绷紧",
+      "en": "lower lip tense",
+      "aliases": [],
+      "position": 111
+    },
+    {
+      "id": "action_asymmetric_mouth",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "嘴部不对称",
+      "en": "asymmetric mouth",
+      "aliases": [],
+      "position": 112
+    },
+    {
+      "id": "action_tearful_eyes",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "眼中含泪",
+      "en": "tearful eyes",
+      "aliases": [],
+      "position": 113
+    },
+    {
+      "id": "action_tongue_visible",
+      "dimension": "action",
+      "category_id": null,
+      "zh": "舌尖可见",
+      "en": "tongue visible",
+      "aliases": [],
+      "position": 114
+    },
+    {
+      "id": "intensity_unrated",
+      "dimension": "intensity",
+      "category_id": null,
+      "zh": "未标注",
+      "en": "Unrated",
+      "aliases": [],
+      "position": 115
+    },
+    {
+      "id": "intensity_subtle",
+      "dimension": "intensity",
+      "category_id": null,
+      "zh": "微弱",
+      "en": "Subtle",
+      "aliases": [],
+      "position": 116
+    },
+    {
+      "id": "intensity_mild",
+      "dimension": "intensity",
+      "category_id": null,
+      "zh": "轻度",
+      "en": "Mild",
+      "aliases": [],
+      "position": 117
+    },
+    {
+      "id": "intensity_moderate",
+      "dimension": "intensity",
+      "category_id": null,
+      "zh": "中度",
+      "en": "Moderate",
+      "aliases": [],
+      "position": 118
+    },
+    {
+      "id": "intensity_strong",
+      "dimension": "intensity",
+      "category_id": null,
+      "zh": "强烈",
+      "en": "Strong",
+      "aliases": [],
+      "position": 119
+    },
+    {
+      "id": "intensity_exaggerated",
+      "dimension": "intensity",
+      "category_id": null,
+      "zh": "夸张",
+      "en": "Exaggerated",
+      "aliases": [],
+      "position": 120
+    }
+  ]
+}

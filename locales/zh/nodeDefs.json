@@ -1,0 +1,49 @@
+{
+  "ExpressionClayGallery": {
+    "display_name": "Expression Gallery 表情图库",
+    "description": "分类、表情类型、面部动作与强度标签；支持单张与批量标注。",
+    "inputs": {
+      "expression_id": {
+        "name": "表情编号"
+      },
+      "language": {
+        "name": "界面与描述语言"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "图像"
+      },
+      "1": {
+        "name": "宽度"
+      },
+      "2": {
+        "name": "高度"
+      },
+      "3": {
+        "name": "表情编号"
+      },
+      "4": {
+        "name": "英文表情"
+      },
+      "5": {
+        "name": "中文表情"
+      },
+      "6": {
+        "name": "描述"
+      },
+      "7": {
+        "name": "表情类型（英文）"
+      },
+      "8": {
+        "name": "面部动作（英文）"
+      },
+      "9": {
+        "name": "强度（英文）"
+      },
+      "10": {
+        "name": "标签 JSON"
+      }
+    }
+  }
+}

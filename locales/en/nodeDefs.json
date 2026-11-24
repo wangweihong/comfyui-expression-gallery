@@ -1,0 +1,49 @@
+{
+  "ExpressionClayGallery": {
+    "display_name": "Expression Gallery",
+    "description": "Categories, expression types, facial actions and intensity with individual and batch annotations.",
+    "inputs": {
+      "expression_id": {
+        "name": "Expression ID"
+      },
+      "language": {
+        "name": "UI and description language"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "Image"
+      },
+      "1": {
+        "name": "Width"
+      },
+      "2": {
+        "name": "Height"
+      },
+      "3": {
+        "name": "Expression ID"
+      },
+      "4": {
+        "name": "Expression (EN)"
+      },
+      "5": {
+        "name": "Expression (ZH)"
+      },
+      "6": {
+        "name": "Description"
+      },
+      "7": {
+        "name": "Expression types (EN)"
+      },
+      "8": {
+        "name": "Facial actions (EN)"
+      },
+      "9": {
+        "name": "Intensity (EN)"
+      },
+      "10": {
+        "name": "Tags JSON"
+      }
+    }
+  }
+}
