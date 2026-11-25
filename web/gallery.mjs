@@ -2,6 +2,7 @@ import {strings,preferred,persist} from './i18n.mjs?v=0.4.0';
 import {createTagTools} from './tag_manager.mjs?v=0.4.0';
 import {createAssetTools} from './asset_manager.mjs?v=0.4.0';
 const $=id=>document.getElementById(id),PAGE=60;
+const browseOnly=new URLSearchParams(location.search).get('browse')==='1';
 let language=preferred(),data={records:[],taxonomy:{categories:[],tags:[],revision:0},meta:{}},category='',shown=0,filtered=[],current=0,selected='',signature='',batch=false;
 const filterTags=new Set(),selectedImages=new Set();
 const t=key=>strings[language][key],name=item=>item?.[language]||item?.en||'';
@@ -77,7 +78,7 @@ function detail(){
  for(const id of ['download','open']){const link=$(id);link.setAttribute('aria-disabled',String(!row.original_available));if(row.original_available)link.href=row.image_url;else link.removeAttribute('href');}$('download').download=row.filename;
  $('rename-custom').hidden=row.origin!=='user';
  if(!row.original_available)$('image-status').textContent=t('missingOriginal');$('prev').disabled=current===0;$('next').disabled=current===filtered.length-1;$('copy').textContent=t('copy');
- $('use').disabled=window.parent===window||!row.original_available;$('use').textContent=t(!row.original_available?'missingOriginal':window.parent===window?'standalone':'use');
+ $('use').disabled=window.parent===window||browseOnly||!row.original_available;$('use').textContent=t(!row.original_available?'missingOriginal':window.parent===window||browseOnly?'standalone':'use');
 }
 function setLanguage(value,notify=true){
  const active=$('viewer').open?filtered[current]?.id:null;
@@ -99,7 +100,7 @@ $('more').onclick=appendPage;$('retry').onclick=()=>refresh();$('language').oncl
 $('tag-filter').onclick=()=>tools.openFilter([...filterTags],ids=>{filterTags.clear();const valid=new Set(activeTags().map(t=>t.id));ids.filter(id=>valid.has(id)).forEach(id=>filterTags.add(id));filter();});
 $('clear-tag-filters').onclick=()=>{filterTags.clear();filter();};$('batch-toggle').onclick=()=>{batch=!batch;renderBatch();};$('select-page').onclick=()=>{filtered.slice(0,shown).forEach(r=>selectedImages.add(r.id));renderBatch();};$('select-filtered').onclick=()=>{filtered.forEach(r=>selectedImages.add(r.id));renderBatch();};$('clear-selection').onclick=()=>{selectedImages.clear();renderBatch();};
 $('batch-edit').onclick=()=>tools.openEditor([...selectedImages],true);$('edit-tags').onclick=()=>tools.openEditor([filtered[current].id]);$('guide-toggle').onclick=()=>$('guide').showModal();$('close').onclick=()=>$('viewer').close();$('prev').onclick=()=>{if(current>0){current--;detail();}};$('next').onclick=()=>{if(current<filtered.length-1){current++;detail();}};
-$('copy').onclick=async()=>{try{await navigator.clipboard.writeText(filtered[current].id);$('copy').textContent=t('copied');}catch{$('copy').textContent=t('copyError');}};$('use').onclick=()=>{if(parent!==window)parent.postMessage({type:'expression-gallery-select',id:filtered[current].id},location.origin);};
+$('copy').onclick=async()=>{try{await navigator.clipboard.writeText(filtered[current].id);$('copy').textContent=t('copied');}catch{$('copy').textContent=t('copyError');}};$('use').onclick=()=>{if(parent!==window&&!browseOnly)parent.postMessage({type:'expression-gallery-select',id:filtered[current].id},location.origin);};
 for(const id of ['viewer','guide'])$(id).addEventListener('click',event=>{if(event.target===$(id)){const r=$(id).getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)$(id).close();}});
 document.addEventListener('keydown',event=>{if(document.querySelector('.tag-dialog[open]'))return;if($('viewer').open){if(event.key==='ArrowLeft')$('prev').click();if(event.key==='ArrowRight')$('next').click();}else if(event.key==='/'&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)){event.preventDefault();$('q').focus();}});
 window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==parent||parent===window)return;if(event.data?.type==='expression-gallery-language'&&['zh','en'].includes(event.data.language))setLanguage(event.data.language,false);if(event.data?.type==='expression-gallery-current'&&typeof event.data.id==='string'){selected=event.data.id;document.querySelectorAll('.card').forEach(c=>c.setAttribute('aria-current',String(c.dataset.id===selected)));current=filtered.findIndex(row=>row.id===selected);if(current>=0){detail();if(!$('viewer').open)$('viewer').showModal();}}});

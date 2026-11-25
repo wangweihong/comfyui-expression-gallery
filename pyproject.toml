@@ -1,6 +1,6 @@
 [project]
 name = "comfyui-expression-gallery"
-version = "0.4.0"
+version = "0.4.1"
 description = "Bilingual white-clay expression reference gallery for ComfyUI"
 requires-python = ">=3.10"
 dependencies = ["Pillow", "numpy", "torch", "aiohttp"]

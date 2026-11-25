@@ -1,10 +1,46 @@
 import {app} from '../../scripts/app.js';
 import {api} from '../../scripts/api.js';
 import {migrateExpressionOutputs} from './output_migration.mjs?v=0.4.0';
-import {strings,persist} from './i18n.mjs?v=0.4.0';
+import {strings,persist,preferred} from './i18n.mjs?v=0.4.1';
+
+let libraryDialog=null,libraryFrame=null;
+function closeLibrary(){
+ window.removeEventListener('message',receiveLibrary);
+ libraryDialog?.remove();libraryDialog=null;libraryFrame=null;
+}
+function receiveLibrary(event){
+ if(event.origin!==location.origin||event.source!==libraryFrame?.contentWindow)return;
+ if(event.data?.type==='expression-gallery-language'&&['zh','en'].includes(event.data.language)){
+  persist(event.data.language);const t=strings[event.data.language];
+  libraryDialog.querySelector('strong').textContent=t.badge;
+  libraryDialog.querySelector('button').textContent=t.close;
+  libraryDialog.setAttribute('aria-label',t.badge);libraryFrame.title=t.badge;
+ }
+}
+function openLibrary(){
+ if(libraryDialog?.open)return;
+ const language=preferred(),t=strings[language];
+ libraryDialog=document.createElement('dialog');libraryDialog.setAttribute('aria-label',t.badge);
+ libraryDialog.style.cssText='width:96vw;height:94vh;max-width:1800px;max-height:96vh;padding:0;border:1px solid #c6c9bb;border-radius:12px;background:#f7f5f0;';
+ const header=document.createElement('div');header.style.cssText='height:46px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 18px;background:#e9ecdf;color:#30382e;font:13px sans-serif;';
+ const heading=document.createElement('strong');heading.textContent=t.badge;
+ const done=document.createElement('button');done.type='button';done.textContent=t.close;done.onclick=closeLibrary;
+ done.style.cssText='padding:5px 13px;border:1px solid #bdc5ae;background:#fff;color:#30382e;border-radius:5px;cursor:pointer;';header.append(heading,done);
+ libraryFrame=document.createElement('iframe');libraryFrame.title=t.badge;
+ libraryFrame.src=api.apiURL('/expression_gallery/gallery')+'?browse=1&lang='+language+'&v=0.4.1';
+ libraryFrame.style.cssText='width:100%;height:calc(100% - 46px);border:0;';libraryDialog.append(header,libraryFrame);
+ libraryDialog.addEventListener('cancel',event=>{event.preventDefault();closeLibrary();});
+ window.addEventListener('message',receiveLibrary);document.body.append(libraryDialog);libraryDialog.showModal();
+}
 
 app.registerExtension({
  name:'comfyui-expression-gallery.browser',
+ actionBarButtons:[{
+  icon:'pi pi-face-smile',
+  label:preferred()==='en'?'Expressions':'表情图库',
+  tooltip:preferred()==='en'?'Browse and manage expression references':'浏览与管理表情参考图库',
+  onClick:openLibrary
+ }],
  beforeConfigureGraph(graphData){migrateExpressionOutputs(graphData);},
  async beforeRegisterNodeDef(nodeType,nodeData){
   if(nodeData.name!=='ExpressionClayGallery')return;
